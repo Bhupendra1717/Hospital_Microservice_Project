@@ -1,0 +1,30 @@
+.patientFormErrors{
+    color: red;
+    
+}
+
+input:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+
+.form-group-margin{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form{
+    font-weight: 600;
+}
+
+.form-align{
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+}
+
+.heading{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,50 @@
+<div class="container form-align form-group-margin">
+    <h3 class="heading">Register Patient</h3>
+    <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+        <div class="form-group form-group-margin">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="form-control" formControlName="name" />
+            <span *ngIf="f['name'].getError('required') != null" class="patientFormErrors">patient name required</span>
+            <span *ngIf="f['name'].getError('minlength') != null" class="patientFormErrors">patient name should have atleast 6 characters</span>
+            
+        </div>
+    
+        <div class="form-group form-group-margin">
+            <label for="gender">Gender</label>
+            <select formControlName="gender" class="form-control" id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <span *ngIf="f['gender'].getError('required') != null" class="patientFormErrors">gender required</span>
+
+        </div>
+    
+        <div class="form-group form-group-margin">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" class="form-control" formControlName="age"/>
+            <span *ngIf="f['age'].getError('required') != null" class="patientFormErrors">age required</span>
+
+        </div>
+
+        <div class="form-group form-group-margin">
+            <label for="visitedDoctor">Visited Doctor</label>
+            <select formControlName="visitedDoctorId" class="form-control" id="visitedDoctor" name="visitedDoctor">
+                <option *ngFor="let doctor of doctors" [value]="doctor.id">{{doctor.name}}</option>
+            </select>
+            <span *ngIf="f['visitedDoctorId'].getError('required') != null" class="patientFormErrors">doctor name required</span>
+
+        </div>
+
+        <div class="form-group form-group-margin">
+            <label for="doctorsPriscription">doctorsPriscription</label>
+            <textarea id="doctorsPriscription" name="doctorsPriscription" class="form-control"
+            formControlName="doctorsPriscription"></textarea>
+            <span *ngIf="f['doctorsPriscription'].getError('required') != null" class="patientFormErrors">doctors priscription required</span>
+
+        </div><br>
+    
+        <input [disabled]="formGroup.invalid" type="submit" value="Register" class="btn btn-success"/>
+    
+    </form>
+
+    </div>

@@ -1,0 +1,46 @@
+<form [formGroup]="formGroup" class="jumbotron container" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="patientId">Please Enter Patient Id</label>
+        <input type="number" name="patientId" class="form-control text-input" formControlName="patientId"/>
+    </div>
+    <input [disabled]="formGroup.invalid" type="submit" value="Find Patient Details" class="btn btn-success button-input">
+</form>
+<div *ngIf="patientIdMatch == patient.id">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ patient.name }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{ patient.gender }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ patient.age }}</td>
+            </tr>
+            <tr>
+                <th>Visited Doctor</th>
+                <td>{{ doctor.name }}</td>
+            </tr>
+            <tr>
+                <th>Date Of Visit</th>
+                <td>{{ patient.dateOfVisit }}</td>
+            </tr>
+            <tr>
+                <th>Doctor's Prescription</th>
+                <td>{{ patient.doctorsPriscription }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+
+<div class="response" *ngIf="patient.id != patientIdMatch">
+    <h1><b>No such patient there in the database</b></h1>
+</div>
+
+
+
+

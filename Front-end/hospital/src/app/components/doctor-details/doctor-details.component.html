@@ -1,0 +1,28 @@
+<div>
+    <label class="doctor-select text-size" for="doctor">Select Doctor</label>
+    <div class="doctor-select">
+        <select [(ngModel)]="doctor.id" id="doctor" name="doctor" (change)="onSelect($event.target)" class="form-select mb-4">
+            <option *ngFor="let doctor of doctors" [value]="doctor.id">{{doctor.name}}</option>
+        </select>
+    </div>
+</div>
+
+<div *ngIf="doctor.id">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>Dr.{{ doctor.name }}</td>
+            </tr>
+            <tr>
+                <th>Specialization Field</th>
+                <td>{{ doctor.specialistOf }}</td>
+            </tr>
+            <tr>
+                <th>Number of patients attended</th>
+                <td>{{ doctor.noOfPatientsAttended }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

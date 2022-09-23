@@ -1,0 +1,35 @@
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.text-input{
+    margin-left: 35%;
+}
+
+.button-input{
+    width: auto;
+}
+
+input:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
+label{
+    margin-top: 20px;
+    font-size: large;
+    font-weight: 800;
+}
+
+form{
+    text-align: center;
+}
+
+.response{
+    text-align: center;
+    color: blue;
+    margin-top: 20px;
+}
